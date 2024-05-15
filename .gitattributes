@@ -1,4 +1,4 @@
-*.mdx linguist-language=mdx
-*.js linguist-language=js
-*.ts linguist-language=ts
-*.css linguist-language=css
+*.mdx linguist-language=MDX
+*.js linguist-language=JavaScript
+*.ts linguist-language=TypeScript
+*.css linguist-language=CSS
