@@ -1,0 +1,53 @@
+---
+sidebar_position: 5
+---
+
+# 预览
+
+在编写完代码并执行后，最终效果将会展示在预览窗口中，先来看看该窗口的结构：
+
+白色的部分就是展示最终效果的地方，在右上角有两个按钮，分别是：
+
+1. 刷新预览窗口
+2. 全屏展示预览窗口
+
+## 全屏
+
+全屏下的预览窗口如图所示：
+
+<img style={{width: "500px"}} src="http://img-cdn.jsencoder.cn/docs/images/screen-fold.png-toWebp.webp"/>
+
+点击上方正中间的半透明箭头展开菜单栏，有两个按钮：刷新和退出全屏。
+
+<img style={{width: "500px"}} src="http://img-cdn.jsencoder.cn/docs/images/screen-unfold.png-toWebp.webp"/>
+
+## 错误提示
+
+在使用预处理语言时需要进行编译后才能在预览窗口执行显示，如果由于代码词法语法问题造成了编译错误，是没有办法在控制台中展示的，因为控制台只展示代码运行时的错误而不是编译时，因此 JS-Encoder 在监听到编译错误时会在预览窗口中展示错误信息：
+
+<img style={{width: "700px"}} src="http://img-cdn.jsencoder.cn/docs/images/preview-error.png-toWebp.webp"/>
+
+## 循环检查
+
+JS-Encoder 将处理好的代码放入一个 iframe 中执行展示在用户面前，但 iframe 与主页面是共用同一个线程（由于是同源的）
+
+因此不可避免会有如下情景发生：用户不小心写出了死循环并执行，结果导致整个页面卡住，只能刷新页面，导致所有代码都被清空。
+
+为了减少这种严重影响体验的情况出现，JS-Encoder 会分析 JavaScript 代码中的循环并加以控制，当循环执行的次数或执行持续时间达到一定的阈值，JS-Encoder 将会强行退出循环。
+
+有些时候你的循环会超出这个阈值，但你很确定这不是一个死循环，那么你可以在循环代码上方添加注释：
+
+```js
+// no-check-loop-next-line
+for (let i = 0; i < 10000000; i++) {}
+```
+
+如果想忽略对所有循环的检查，你可以在编辑器代码的最上方添加注释：
+
+```js
+// no-check-loop
+```
+
+但还是那句话，在添加这些注释之前，希望你能知道这么做的后果。
+
+如果你好奇 JS-Encoder 如何实现循环检查，请看[循环检查](./deep/loop)。

@@ -1,0 +1,45 @@
+---
+sidebar_position: 5
+---
+
+# 上传代码
+
+在侧边工具栏点击模板选项，将本地的代码文件上传至 JS-Encoder 编写：
+
+<img style={{width: "550px"}} src="http://img-cdn.jsencoder.cn/docs/images/upload.png-toWebp.webp"/>
+
+目前支持如下类型文件的上传：
+
+- `.html`
+- `.css`
+- `.js`
+- `.md`
+- `.pug`
+- `.sass`
+- `.scss`
+- `.styl`
+- `.less`
+- `.coffee`
+- `.ts`
+- `.vue`
+- `.jsx`
+
+同等类型文件的上传不会叠加，而是会被后上传的文件覆盖。
+并且如果两个文件属于同一个预处理组（如 Markdown 与 Pug 同属于 HTML 预处理），同样适用于这个规则。
+
+:::warning
+上传相应格式的文件会覆盖对应窗口的代码，比如上传了一个 markdown 文件，那么代码将会覆盖 JS-Encoder Markdown 窗口的代码。
+如果当前 HTML 预处理不是 Markdown，那么将会被自动设置成 Markdown。
+:::
+
+## HTML 文件分析
+
+当你上传了 html 文件时， JS-Encoder 将会分析文件代码，正常情况下将会解析出如下内容：
+
+1. 外部 link
+2. 外部 script
+3. `<style></style>` 内的样式代码
+4. `<body></body>` 内的代码（不包含 script）
+5. `<script></script>` 内的脚本代码
+
+而后外部 link 和 script 将会设置到[库](./lib)中，几个标签内的代码将会设置到对应的编辑器窗口中。

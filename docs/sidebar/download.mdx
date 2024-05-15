@@ -1,0 +1,37 @@
+---
+sidebar_position: 6
+---
+
+# 下载代码
+
+在侧边工具栏点击下载代码选项，可以将你在 JS-Encoder 中编写的代码下载到本地保存：
+
+<img style={{width: "400px"}} src="http://img-cdn.jsencoder.cn/docs/images/download.png-toWebp.webp"/>
+
+你可以选择两种下载方式：
+
+1. 单文件（将编译后的 HTML、CSS 和 JS 代码整合成一个 HTML 文件）。
+2. 多文件（生成一个包含编译后的 HTML、CSS 和 JS 文件的文件夹压缩包）。
+
+并且可自定义下载的文件/文件夹名。
+
+:::info
+如果预处理使用了 Markdown，那么你会在下载的 html 文件中看到有关 Markdown 的外部链接和处理代码，这些是为了支持数学公式和流程图的显示。
+:::
+
+## 单文件
+
+如果你不在乎处理后的代码长什么样，只需要一个能直接在浏览器执行看到效果的 HTML，那么可以选择单文件下载，默认情况下会产生一个 `index.html` 文件。
+
+## 多文件
+
+通常情况下，编译前后的文件你都需要，默认情况下会产生如下文件（假如预处理使用了 Markdown、Sass和TypeScript）：
+
+- index.zip
+  - 📄 index.md
+  - 📄 index.sass
+  - 📄 index.ts
+  - 📂 compiled
+    - 📄 index.html
+    - 📄 index.css
+    - 📄 index.js

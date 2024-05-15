@@ -1,0 +1,65 @@
+---
+sidebar_position: 6
+---
+
+# 控制台
+
+JS-Encoder 的控制台相比旧版本更加强大，支持更多 console 方法以及数据格式的展示，同时展示的效果也更加偏向于浏览器控制台。
+
+新版控制台：
+<img style={{width: "500px"}} src="http://img-cdn.jsencoder.cn/docs/images/console.png-toWebp.webp"/>
+
+旧版控制台：
+<img style={{width: "500px"}} src="http://img-cdn.jsencoder.cn/docs/images/old-console.png-toWebp.webp"/>
+
+旧版本的控制台的日志是使用 codemirror 进行高亮和代码伸缩的，并且在这之前需要经历一系列的数据转换逻辑，这个过程是非常低效的，且展示效果相对浏览器控制台要差得多。
+
+JS-Encoder V4 重写了控制台逻辑，采用新的方案来渲染日志，如果你想知道更多，请看[控制台如何展示日志](./deep/console)。
+
+目前控制台支持如下 console 方法：
+
+- log
+- info
+- warn
+- error
+- assert
+- time
+- timeLog
+- timeEnd
+- clear
+- table
+
+其他方法还未支持，可在浏览器控制台上查看输出。
+
+## 工具栏
+
+<img style={{width: "500px"}} src="http://img-cdn.jsencoder.cn/docs/images/console-tool.png-toWebp.webp"/>
+
+如图所示，有如下信息：
+
+1. Console 旁边的数字 "28" 代表当前的日志条数。
+2. 右边的三个高亮图标依次代表着当前的错误（error）、警告（warn）和信息（info）日志条数。
+3. 右上方的箭头可以最小化控制台窗口，如果你不需要输出日志只想看效果，那么点击它！
+4. 在过滤下拉框中选择你想要展示的日志类型，默认展示全部（All），有如下几个选项：
+    - All（全部）
+    - Message（普通日志如 log）
+    - Info（信息日志 info）
+    - Warn（警告日志 warn）
+    - Error（错误日志 error）
+5. 如果想清除所有 console，点击右下脚的禁止图标。
+6. 旁边的设置图标点击后可以进行控制台相关设置，目前只有一项：每次执行前是否自动清空历史日志。
+
+## 命令
+
+与浏览器控制台一样，你可以直接在控制台中输入命令并执行，在调试的时候非常有用。
+
+蓝色箭头所指向的就是你可以输入命令的地方，输入命令按下 <kbd>Enter</kbd> 执行：
+
+<img style={{width: "400px"}} src="http://img-cdn.jsencoder.cn/docs/images/command.webp"/>
+
+### 历史命令
+
+你所执行的历史命令会被保存起来，可以通过方向键 <kbd>Up</kbd> 和 <kbd>Down</kbd> 来切换这些历史命令，并按<kbd>Enter</kbd> 执行：
+
+<img style={{width: "400px"}} src="http://img-cdn.jsencoder.cn/docs/images/history-command.webp"/>
+

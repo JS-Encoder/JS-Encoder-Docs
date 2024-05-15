@@ -1,0 +1,60 @@
+---
+sidebar_position: 2
+---
+
+# 基本结构
+
+按照大体功能的划分，可以把 JS-Encoder 看作如下几个模块组成：
+
+1. 侧边工具栏
+2. 编辑器窗口
+3. 预览窗口
+4. 控制台
+
+## 侧边工具栏
+
+图中展示了侧边工具栏的主要选项，从上至下依次为：
+
+<div style={{display: "flex"}}>
+  <img style={{width: "30px"}} src="http://img-cdn.jsencoder.cn/docs/images/sidebar.png-toWebp.webp"/>
+  <div style={{marginLeft: "10px"}}>
+
+    1. [模板](./sidebar/template)（选择包含特定配置和代码的模板）
+    2. [预处理](./sidebar/prep)（选择预处理语言如 Scss、Typescript）
+    3. [编码设置](./sidebar/settings)（在这里进行编码相关设置）
+    4. [库](./sidebar/lib)（在这里添加示例中所用到的外部库链接）
+    5. [上传代码](./sidebar/upload)（选择本地代码文件上传到 JS-Encoder 进行编辑）
+    6. [下载代码](./sidebar/download)（下载代码到本地保存）
+    7. 快捷键
+    8. 更新日志（查看来自于 Github 仓库的 Release 信息）
+    9. 帮助文档（链接到当前文档）
+  </div>
+</div>
+
+## 编辑器窗口
+
+<img style={{width: "500px"}} src="http://img-cdn.jsencoder.cn/docs/images/editor-window.png-toWebp.webp"/>
+
+编辑器窗口是最常使用的区域，示例代码的编写就在这里。
+
+默认的编辑器窗口有三个 Tab：HTML、CSS 和 JavaScript，每个 Tab 的名字对应着代码所使用的（预处理）语言。可以点击 Tab 切换编辑窗口，也可以用鼠标拖动 Tab 来分割编辑器视图，如果想同时看到多个 Tab 所对应的代码，那这是一个很方便的功能。
+
+更详细的说明请看 [代码编辑](./code-editor)。
+
+## 预览窗口
+
+<img style={{width: "500px"}} src="http://img-cdn.jsencoder.cn/docs/images/preview-window.png-toWebp.webp"/>
+
+当编辑器中输入了代码，在检测到变更后，JS-Encoder 将会对编辑器中的代码进行一系列处理，最后将结果展示在预览窗口中。
+
+预览窗口上方有一个小工具栏，可以进行对预览窗口的刷新和放大。
+
+更详细的说明请看 [预览](./preview)。
+
+## 控制台
+
+<img style={{width: "500px"}} src="http://img-cdn.jsencoder.cn/docs/images/console-window.png-toWebp.webp"/>
+
+如果你在代码中输出了值，如 `console.log(123)`，那么被输出的数据将会展示在控制台中，还可以在控制台下方输入命令进行调试。
+
+更详细的说明请看 [控制台](./console)。

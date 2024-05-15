@@ -1,0 +1,147 @@
+---
+sidebar_position: 4
+---
+
+# 代码编辑
+
+JS-Encoder 的代码编辑窗口基于 Codemirror 开发，Codemirror 具有良好的性能、众多的插件和功能扩展性，这就是使用它的原因。
+
+## 窗口
+
+初始的代码编辑窗口如下：
+
+<img style={{width: "500px"}} src="http://img-cdn.jsencoder.cn/docs/images/editor-window.png-toWebp.webp"/>
+
+如你所见，JS-Encoder 将 HTML、CSS 和 JavaScript 分成独立的窗口显示。这一方面是因为这三个本来就是不同的技术，另一方面避免了在代码量多的情况下造成代码混乱的问题，分成三个窗口看上去更加整洁。
+
+在许多时候你会想同时看见多个窗口的代码，在 V4 中 JS-Encoder 提供了这个功能，你可以拖动tab对窗口进行自由分割以及合并：
+
+<img style={{width: "700px"}} src="http://img-cdn.jsencoder.cn/docs/images/split-view.webp"/>
+
+如果你想专注于代码编写，可以点击右上角的箭头按钮将预览窗口隐藏：
+
+<img style={{width: "700px"}} src="http://img-cdn.jsencoder.cn/docs/images/hide-preview.webp"/>
+
+## 工具栏
+
+每个编辑器窗口右上角展示着该（预处理）语言可用的操作，如格式化，markdown 工具栏。
+
+## 更简洁的 HTML
+
+在 HTML 窗口中，你不需要使用 `!` + `Tab` 或者手动去生成 HTML 头部，JS-Encoder 会在执行代码前将各个窗口的代码放到相应的位置上执行。下边是一个例子：
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <style>
+      /* CSS 窗口代码 */
+    </style>
+  </head>
+  <body translate="no">
+    <!-- HTML 窗口代码 -->
+    <script>
+      /* JavaScript 窗口代码 */
+    </script>
+  </body>
+</html>
+```
+
+但这并不意味着你不可以在 HTML 窗口中编写 CSS 和 JavaScript，只是你需要用 `<style></style>` 和 `<script></script>` 标签将其包裹：
+
+## 编码
+
+### Emmet
+
+Emmet 是很好用的功能，你可以在编写 HTML、CSS 和 JavaScript 代码的时候按下 `Tab` 进行自动补全。
+
+目前有如下（预处理）语言支持 Emmet：
+
+- HTML
+- Pug
+- CSS
+- Sass
+- Scss
+- Less
+- Vue
+
+下面是一个例子：
+
+<img style={{width: "400px"}} src="http://img-cdn.jsencoder.cn/docs/images/emmet.webp"/>
+
+你可以在侧边栏的[编码设置](./sidebar/settings)中开启/关闭该功能。
+
+### Linter
+
+目前有如下（预处理）语言支持 Linter：
+
+- HTML
+- CSS
+- Sass
+- Scss
+- Less
+- Stylus
+- JavaScript
+- TypeScript
+
+下面是一个例子：
+
+<img style={{width: "400px"}} src="http://img-cdn.jsencoder.cn/docs/images/linter.webp"/>
+
+你可以在侧边栏的[编码设置](./sidebar/settings)中开启/关闭该功能。
+
+### 格式化
+
+JS-Encoder 使用 Prettier 来格式化代码，你可以在编辑窗口右上角工具栏的**更多**选项中选择格式化代码来让代码变得更美。
+
+目前有如下（预处理）语言支持格式化：
+
+- HTML
+- Markdown
+- CSS
+- Sass
+- Scss
+- Less
+- JavaScript
+- TypeScript
+- Babel
+- Vue
+
+### 智能提示
+
+现代编辑器中智能提示是不可或缺的功能。尤其是当语言的基础 API 愈加繁多的情况下，智能提示可以大大增加编码效率。
+
+下面是一个例子：
+
+<img style={{width: "400px"}} src="http://img-cdn.jsencoder.cn/docs/images/autocomplete.webp"/>
+
+#### LSP
+
+Codemirror 自带的智能提示功能很好，在编写 HTML、CSS 这类语言时完全够用，但仍存在问题：无法动态分析代码中所声明的变量和属性。
+
+JS-Encoder 通过接入 TypeScript LSP 解决了这个问题。
+
+如果想了解具体实现方式，请看：[LSP](./deep/LSP)
+
+## 内置插件
+
+### 代码搜索
+
+JS-Encoder 开发了一个与 VSCode 相似的搜索框插件，Codemirror 内置的搜索插件的结构无法自定义，但所用到的功能都被 Codemirror 封装成了一个一个的 Command，所以完全可以自己做一个新插件代替。
+
+<img style={{width: "300px"}} src="http://img-cdn.jsencoder.cn/docs/images/search.png-toWebp.webp"/>
+
+在编辑器中通过 <kbd>Ctrl/Cmd</kbd>+<kbd>F</kbd> 打开搜索框进行使用。
+
+:::note
+之后该插件将会作为独立的 npm 包便于其他开发者使用。
+:::
+
+### Markdown工具栏
+
+使用工具栏可以更快的生成 Markdown 语法，配合[快捷键](./sidebar/shortcut)效果更佳哦。
+
+<img style={{width: "450px"}} src="http://img-cdn.jsencoder.cn/docs/images/markdown-tools.webp"/>
