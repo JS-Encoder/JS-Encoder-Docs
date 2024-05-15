@@ -1,41 +1,14 @@
-# Website
+<div style="display:flex;flex-direction:column;align-items:center;">
+  <div><img width="48px" src="./static/img/logo.svg" /></div>
+  <h1 align="center" style="width:100%;margin-top:20px;color:transparent;background-clip:text;background-image:linear-gradient(135deg,#6690FF,#3366FF);font-size:32px;font-weight:700;">JS-Encoder-Docs</h1>
+</div>
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+<h3 align="center">JS-Encoder V4 帮助说明文档</h3>
 
-### Installation
+<div align="center">本文档将详细介绍 JS-Encoder 的各种功能以便用户能够快速了解及上手使用它。</div>
 
-```
-$ yarn
-```
-
-### Local Development
-
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+<div align="center">
+  <button style="padding: 10px 30px;outline:none;border:2px solid #1c1e21;border-radius:8px;font-size:18px;font-weight:700;cursor:pointer">
+    <a href="http://docs.jsencoder.cn/" style="color:#1c1e21;">Get Start</a>
+  </button>
+</div>
