@@ -6,7 +6,7 @@ const config: Config = {
   title: 'JS-Encoder Documentation',
   tagline: '本文档将详细介绍 JS-Encoder 的各种功能以便用户能够快速了解及上手使用它。',
   favicon: 'img/favicon.ico',
-  url: 'https://www.jsencoder.cn',
+  url: 'https://docs.jsencoder.cn/',
   baseUrl: '/',
   organizationName: 'JS-Encoder',
   projectName: 'JS-Encoder',
