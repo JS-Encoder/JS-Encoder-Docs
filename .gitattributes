@@ -1,0 +1,4 @@
+*.mdx linguist-language=MDX
+*.js linguist-language=MDX
+*.ts linguist-language=MDX
+*.css linguist-language=MDX
