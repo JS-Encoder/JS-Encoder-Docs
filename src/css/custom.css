@@ -72,7 +72,7 @@ body {
   }
 }
 
-.buttons_src-pages-index-module .button {
+.hero.hero--primary .button {
   background-image: linear-gradient(135deg,#6690FF,#3366FF);
   border: none;
   color: #ffffff;
