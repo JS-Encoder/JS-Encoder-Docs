@@ -25,12 +25,13 @@
   --ifm-color-primary-lighter: #ffffff;
   --ifm-color-primary-lightest: #ffffff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-navbar-background-color: rgb(34 34 40 / 50%);
+  --ifm-navbar-background-color: #121214;
   --ifm-navbar-height: 50px;
   --ifm-hover-overlay: #222228 !important;
   --doc-sidebar-width: 240px !important;
   --ifm-toc-border-color: transparent !important;
   --ifm-toc-padding-horizontal: 4px;
+  --ifm-background-color: #121214 !important;
 }
 
 body {
@@ -55,6 +56,17 @@ body {
 
 .hero__subtitle {
   color: var(--ifm-color-emphasis-700);
+}
+
+.hero.heroBanner_src-pages-index-module {
+  flex: 1;
+  padding-top: 0;
+  height: 100%;
+  background-image: url("../../static/img/home-bg.svg");
+}
+
+.features_src-components-HomepageFeatures-styles-module {
+  display: none !important;
 }
 
 @media screen and (max-width: 996px) {
@@ -82,7 +94,7 @@ body {
     --ifm-navbar-background-color: rgb(255 255 255);
   }
   [data-theme='dark'] {
-    --ifm-navbar-background-color: rgb(34 34 40);
+    --ifm-navbar-background-color: #121214;
   }
 }
 
@@ -190,5 +202,5 @@ body {
 }
 
 .footer--dark {
-  background-color: #111111;
+  background-color: #121214;
 }
